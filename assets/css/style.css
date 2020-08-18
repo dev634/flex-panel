@@ -128,7 +128,7 @@ body {
 		left: var(--translate);
 		width: 500vw;
 		overflow-y: hidden;
-		transition: left 0.4s ease-out 1s;
+		transition: left 0.4s ease-out;
 	}
 	.img {
 		flex: 1;

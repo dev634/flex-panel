@@ -135,7 +135,7 @@ body {
 	}
 
 	.img.is-open-active > *:last-child {
-		transform: translateY(-1.25rem);
+		transform: translateY(-1.5rem);
 	}
 }
 

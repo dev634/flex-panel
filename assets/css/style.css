@@ -1,3 +1,7 @@
+:root {
+	--moving: 0%;
+}
+
 html {
 	font-family: "Lobster-Regular", sans-serif;
 	font-weight: normal;
@@ -24,6 +28,7 @@ body {
 	display: flex;
 	overflow: hidden;
 	min-height: 100vh;
+	transition: left 1s ease-out;
 }
 
 .img {
@@ -34,7 +39,6 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	flex: 1;
-	max-width: 50%;
 	transition: flex 1s cubic-bezier(0.63, 0.04, 0.31, 0.81);
 }
 
@@ -65,6 +69,7 @@ body {
 	color: rgba(240, 240, 240, 0.8);
 	text-shadow: 0 0 4px #202020;
 	text-align: center;
+	font-size: 70%;
 }
 
 .img > * {
@@ -112,4 +117,27 @@ body {
 		url("../fonts/Lobster-Regular.woff2") format("woff2");
 	font-weight: normal;
 	font-style: normal;
+}
+
+@media screen and (orientation: portrait) {
+	body {
+		overflow-y: hidden;
+	}
+	.container {
+		width: 500vw;
+		overflow-y: hidden;
+	}
+	.img {
+		flex: 1;
+	}
+	.container {
+		position: relative;
+		left: 0;
+	}
+}
+
+@media screen and (max-width: 1199px) {
+	.text {
+		font-size: 50%;
+	}
 }

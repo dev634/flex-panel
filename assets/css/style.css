@@ -143,14 +143,8 @@ body {
 	}
 }
 
-@media screen and (max-width: 1199px) and (orientation: portrait) {
+@media screen and (max-width: 1199px) {
 	.text {
 		font-size: 50%;
-	}
-}
-
-@media screen and (max-width: 764px) and (orientation: portrait) {
-	.text {
-		font-size: 40%;
 	}
 }

@@ -1,0 +1,115 @@
+html {
+	font-family: "Lobster-Regular", sans-serif;
+	font-weight: normal;
+	font-size: 4rem;
+	background-color: #202020;
+}
+
+html,
+body,
+h1,
+div {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+}
+
+.container {
+	display: flex;
+	overflow: hidden;
+	min-height: 100vh;
+}
+
+.img {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	flex: 1;
+	max-width: 50%;
+	transition: flex 1s cubic-bezier(0.63, 0.04, 0.31, 0.81);
+}
+
+.img1 {
+	background-image: url("../img/AurelionSol.jpg");
+}
+
+.img2 {
+	background-image: url("../img/Aphelios.jpg");
+}
+
+.img3 {
+	background-image: url("../img/Blitzcrank.jpg");
+}
+
+.img4 {
+	background-image: url("../img/Garen.webp");
+}
+
+.img5 {
+	background-image: url("../img/Zilean.jpg");
+}
+
+.text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: rgba(240, 240, 240, 0.8);
+	text-shadow: 0 0 4px #202020;
+	text-align: center;
+}
+
+.img > * {
+	opacity: 0;
+	transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.img > *:first-child {
+	transform: translateY(-100%);
+}
+
+.img > *:last-child {
+	transform: translateY(100%);
+}
+
+.img.is-open-active > *:first-child,
+.img.is-open-active > *:nth-child(2),
+.img.is-open-active > *:last-child {
+	opacity: 1;
+}
+
+.img.is-open-active > *:nth-child(2) {
+	color: #dedede;
+}
+
+.img.is-open-active > *:first-child {
+	transform: translateY(1rem);
+}
+
+.img.is-open-active > *:last-child {
+	transform: translateY(-1rem);
+}
+
+.img.is-open {
+	flex: 5;
+}
+
+@font-face {
+	font-family: "Lobster-Regular";
+	src: url("../fonts/Lobster-Regular.eot");
+	src: url("../fonts/Lobster-Regular.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/Lobster-Regular.svg#Lobster-Regular") format("svg"),
+		url("../fonts/Lobster-Regular.ttf") format("truetype"),
+		url("../fonts/Lobster-Regular.woff") format("woff"),
+		url("../fonts/Lobster-Regular.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+}

@@ -134,6 +134,10 @@ body {
 		flex: 1;
 	}
 
+	.img.is-open-active > *:first-child {
+		transform: translateY(0.75rem);
+	}
+
 	.img.is-open-active > *:last-child {
 		transform: translateY(-1.5rem);
 	}

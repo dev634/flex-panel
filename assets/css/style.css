@@ -1,5 +1,5 @@
 :root {
-	--moving: 0%;
+	--translate: 0%;
 }
 
 html {
@@ -124,15 +124,18 @@ body {
 		overflow-y: hidden;
 	}
 	.container {
+		position: relative;
+		left: var(--translate);
 		width: 500vw;
 		overflow-y: hidden;
+		transition: left 1s ease-out 1s;
 	}
 	.img {
 		flex: 1;
 	}
+
 	.container {
 		position: relative;
-		left: 0;
 	}
 }
 

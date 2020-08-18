@@ -4,17 +4,25 @@ const container = document.querySelector(".container");
 let move = 0;
 
 function handleTouchMove(e) {
-	if (e.type == "touchstart") {
-		e.preventDefault();
-	} else if (e.type == "touchmove") {
-		e.preventDefault();
-	} else if (e.type == "touchend") {
-		e.target.parentNode.style.position = "relative";
-		move += -100;
-		if (move == -500) {
-			move = 0;
-		}
-		e.target.parentNode.style.left = move + "%";
+	switch (e.type) {
+		case "touchstart":
+			e.preventDefault();
+			this.classList.add("is-open-active");
+			break;
+		case "touchmove":
+			e.preventDefault();
+			break;
+		case "touchend":
+			move = move == -400 ? 0 : move - 100;
+			this.classList.remove("is-open-active");
+			document.documentElement.style.setProperty(
+				"--translate",
+				move + "%"
+			);
+			break;
+		default:
+			alert("Something wrong happened ...");
+			break;
 	}
 }
 
@@ -36,9 +44,11 @@ function opening(e) {
 }
 
 if (window.innerHeight > window.innerWidth) {
-	container.addEventListener("touchstart", handleTouchMove);
-	container.addEventListener("touchmove", handleTouchMove);
-	container.addEventListener("touchend", handleTouchMove);
+	images.forEach(function (element) {
+		element.addEventListener("touchstart", handleTouchMove);
+		element.addEventListener("touchmove", handleTouchMove);
+		element.addEventListener("touchend", handleTouchMove);
+	});
 } else {
 	images.forEach(function (element) {
 		element.addEventListener("click", opening);

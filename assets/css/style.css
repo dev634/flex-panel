@@ -7,6 +7,7 @@ html {
 	font-weight: normal;
 	font-size: 4rem;
 	background-color: #202020;
+	overflow: hidden;
 }
 
 html,
@@ -22,6 +23,7 @@ div {
 body {
 	width: 100vw;
 	height: 100vh;
+	overflow: hidden;
 }
 
 .container {
